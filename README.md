@@ -1,24 +1,32 @@
-# README
+# Nervos CITA Server
+[![Build Status](https://travis-ci.org/CITA-Toys/nervos-cita-server.svg?branch=develop)](https://travis-ci.org/CITA-Toys/nervos-cita-server)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+provide data server for Nervos CITA website
 
-Things you may want to cover:
+## Packages
 
-* Ruby version
+    - imagemagick
+    - postgresql 9.4 and above
 
-* System dependencies
+## Initial Project
 
-* Configuration
+```shell
+touch .env.local # read .env config database, mail and so on
 
-* Database creation
+rails db:create
 
-* Database initialization
+rails db:migrate
+```
 
-* How to run the test suite
+## Running Test
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+rails test
+```
 
-* Deployment instructions
+## Run Project
 
-* ...
+```shell
+rails s
+./bin/webpack-dev-server
+```
