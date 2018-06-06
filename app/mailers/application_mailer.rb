@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: ENV.fetch('MAIL_USERNAME') { 'noreply@cryptape.com' }
   layout 'mailer'
 end
