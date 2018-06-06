@@ -1,0 +1,12 @@
+zh-CN:
+  activerecord:
+    attributes:
+      answer:
+        content: "内容"
+
+    errors:
+      models:
+        answer:
+          attributes:
+            content:
+              blank: "不能为空"

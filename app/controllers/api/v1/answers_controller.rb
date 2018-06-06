@@ -1,6 +1,9 @@
 class Api::V1::AnswersController < Api::ApplicationController
   # create a answer
-  # post /api/v1/answer
+  # post /api/v1/answers
+  # @params {
+  #   content: JSON
+  # }
   def create
     @answer = Answer.new(content: params[:content])
     if @answer.save

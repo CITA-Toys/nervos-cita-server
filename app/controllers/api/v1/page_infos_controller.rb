@@ -2,6 +2,7 @@ class Api::V1::PageInfosController < Api::ApplicationController
   before_action :load_page_info, only: [:show]
 
   # get /api/v1/page_infos/:id (id is name or id)
+  # name in %w(homepage question)
   def show
     render json: @page_info || {}
   end
