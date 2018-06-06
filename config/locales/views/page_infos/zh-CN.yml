@@ -1,0 +1,5 @@
+zh-CN:
+  page_infos:
+    api:
+      v1:
+        not_found: "未找到"
