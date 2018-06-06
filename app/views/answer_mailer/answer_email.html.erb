@@ -1,0 +1,10 @@
+<% @answer.content.each do |qa| %>
+  <div>
+    <p>
+      <b>Q: </b><%= qa["q"] %>
+    </p>
+    <p>
+      <b>A: </b><%= qa["a"] %>
+    </p>
+  </div>
+<% end %>

@@ -1,5 +1,13 @@
 {
   "name": "nervos-cita-server",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "rails-ujs": "^5.2.0",
+    "resolve-url-loader": "^2.3.0",
+    "turbolinks": "^5.1.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
 }

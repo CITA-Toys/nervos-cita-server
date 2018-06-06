@@ -24,5 +24,15 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+# puma config
+/config/puma.rb
 
 .ruby-gemset
+
+# env local configs
+.env.local
+.env.*.local
+/public/packs
+/public/packs-test
+yarn-debug.log*
+.yarn-integrity

@@ -1,0 +1,11 @@
+zh-CN:
+  activerecord:
+    attributes:
+      page_info:
+        name: "名字"
+        locale: "地区"
+        content: "内容"
+
+    errors:
+      messages:
+        blank: "不能为空"
