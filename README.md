@@ -1,5 +1,5 @@
 # Nervos CITA Server
-[![Build Status](https://travis-ci.org/CITA-Toys/nervos-cita-server.svg?branch=develop)](https://travis-ci.org/CITA-Toys/nervos-cita-server)
+[![Build Status](https://travis-ci.org/CITA-Toys/nervos-cita-server.svg?branch=master)](https://travis-ci.org/CITA-Toys/nervos-cita-server)
 
 provide data server for Nervos CITA website
 
