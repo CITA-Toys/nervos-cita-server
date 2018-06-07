@@ -1,0 +1,2 @@
+module PageInfosHelper
+end
