@@ -36,3 +36,6 @@
 /public/packs-test
 yarn-debug.log*
 .yarn-integrity
+
+# coverage
+coverage
