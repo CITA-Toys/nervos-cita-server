@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render "layouts/header" unless params[:controller] == "sessions" %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,15 @@
+<header class="header-box">
+
+  <div class="header-limiter">
+    <nav>
+      <a href="<%= images_path %>">Images</a>
+
+      <% if logged_in? %>
+        <a href="<%= logout_path %>">Log out</a>
+      <% else %>
+        <a href="<%= login_path %>">Log in</a>
+      <% end %>
+    </nav>
+  </div>
+
+</header>

@@ -11,9 +11,10 @@ class SessionsController < ApplicationController
 
     if @user&.authenticate(permit_params[:password])
       log_in(@user)
-      redirect_to root_path
+      redirect_to images_path
     else
-      redirect_to root_path
+      flash.now[:error] = "user not exist or password error"
+      render :new
     end
   end
 

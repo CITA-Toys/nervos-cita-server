@@ -17,31 +17,37 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     test "login success" do
       post "/sessions", params: { session: { username: @username, password: @password } }
       assert session[:user_id], @user.id
-      assert_redirected_to root_path
+      assert_redirected_to images_path
     end
 
     test "user not found" do
       post "/sessions", params: { session: { username: "test1", password: @password } }
       assert_nil session[:user_id]
-      assert_redirected_to root_path
+      assert_response :success
     end
 
     test "password error" do
       post "/sessions", params: { session: { username: @username, password: "111112" } }
       assert_nil session[:user_id]
-      assert_redirected_to root_path
+      assert_response :success
     end
   end
 
   class DestroySessionTest < SessionsControllerTest
     test "not login" do
-      delete "/sessions"
+      delete "/logout"
       assert_redirected_to root_path
     end
 
     test "log out success" do
       sign_in
-      delete "/sessions"
+      delete "/logout"
+      assert_redirected_to root_path
+    end
+
+    test "logout by get method" do
+      sign_in
+      get "/logout"
       assert_redirected_to root_path
     end
   end

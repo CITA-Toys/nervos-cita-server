@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "sessions#new"
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create]
-  delete :sessions, to: "sessions#destroy"
+  get '/login', to: "sessions#new", as: :login
+  match '/logout', to: "sessions#destroy", via: [:get, :delete], as: :logout
 end
