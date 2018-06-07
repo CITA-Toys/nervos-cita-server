@@ -33,7 +33,7 @@ class Api::V1::PageInfosControllerTest < ActionDispatch::IntegrationTest
   test "can not find" do
     get "/api/v1/page_infos/nervos"
     assert status, ERROR_STATUS
-    assert message, I18n.t("page_infos.api.v1.not_found")
+    assert msg, I18n.t("page_infos.api.v1.not_found")
   end
 
   test "locale not right" do
