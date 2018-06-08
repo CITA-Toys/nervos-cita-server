@@ -58,6 +58,9 @@ gem 'mina-multistage', require: false
 # webpacker
 gem 'webpacker', '~> 3.5'
 
+# support for Cross-Origin Resource Sharing (CORS)
+gem 'rack-cors', require: 'rack/cors'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
