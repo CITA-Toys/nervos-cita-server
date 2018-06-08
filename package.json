@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "jsoneditor": "^5.17.1",
     "rails-ujs": "^5.2.0",
     "resolve-url-loader": "^2.3.0",
     "turbolinks": "^5.1.1"

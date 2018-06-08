@@ -22,7 +22,7 @@ class PageInfosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create page_info" do
     assert_difference('PageInfo.count') do
-      post page_infos_url, params: { page_info: { content: [{"one": "two"}], locale: @page_info.locale, name: "#{@page_info.name}1" } }
+      post page_infos_url, params: { page_info: { content: Oj.dump([{"one": "two"}]), locale: @page_info.locale, name: "#{@page_info.name}1" } }
     end
 
     assert_redirected_to page_info_url(PageInfo.last)
@@ -39,7 +39,7 @@ class PageInfosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update page_info" do
-    patch page_info_url(@page_info), params: { page_info: { content: @page_info.content, locale: @page_info.locale, name: @page_info.name } }
+    patch page_info_url(@page_info), params: { page_info: { content: Oj.dump(@page_info.content), locale: @page_info.locale, name: @page_info.name } }
     assert_redirected_to page_info_url(@page_info)
   end
 

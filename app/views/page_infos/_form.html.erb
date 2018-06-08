@@ -23,10 +23,11 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, style: "height: 200px; width: 800px;" %>
+    <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+    <%= form.text_area :content, id: "content", style: "height: 200px; width: 800px;", hidden: true, data: { content: "#{Oj.dump(@page_info.content)}" } %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit", id: "submit-page-info" %>
   </div>
 <% end %>

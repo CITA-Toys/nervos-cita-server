@@ -25,7 +25,7 @@ class PageInfosController < ApplicationController
   # POST /page_infos.json
   def create
     @page_info = PageInfo.new(page_info_params)
-    @page_info.content = params[:page_info][:content]
+    @page_info.content = content_param
 
     respond_to do |format|
       if @page_info.save
@@ -42,7 +42,7 @@ class PageInfosController < ApplicationController
   # PATCH/PUT /page_infos/1.json
   def update
     respond_to do |format|
-      if @page_info.update(name: params[:page_info][:name], locale: params[:page_info][:locale], content: params[:page_info][:content])
+      if @page_info.update(name: params[:page_info][:name], locale: params[:page_info][:locale], content: content_param)
         format.html { redirect_to @page_info, notice: 'Page info was successfully updated.' }
         format.json { render :show, status: :ok, location: @page_info }
       else
@@ -71,5 +71,11 @@ class PageInfosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_info_params
       params.require(:page_info).permit(:name, :locale)
+    end
+
+    def content_param
+      Oj.load(params[:page_info][:content])
+    rescue
+      nil
     end
 end
