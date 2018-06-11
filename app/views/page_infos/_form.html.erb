@@ -1,0 +1,33 @@
+<%= form_with(model: page_info, local: true) do |form| %>
+  <% if page_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page_info.errors.count, "error") %> prohibited this page_info from being saved:</h2>
+
+      <ul>
+      <% page_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :locale %>
+    <%= form.text_field :locale %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+    <%= form.text_area :content, id: "content", style: "height: 200px; width: 800px;", hidden: true, data: { content: "#{Oj.dump(@page_info.content)}" } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Submit", id: "submit-page-info" %>
+  </div>
+<% end %>
